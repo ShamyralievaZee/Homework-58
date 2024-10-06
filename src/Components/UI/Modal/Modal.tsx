@@ -17,13 +17,13 @@ interface Props extends React.PropsWithChildren {
 const Modal: React.FC<Props> = ({ show, title = 'Modal title', children, closeModal, buttons }) => {
     return (
         <>
-            <Backdrop show={show} closeModal={closeModal} />
+            <Backdrop show={show}/>
             <div className="modal show" style={{ display: show ? 'block' : 'none' }}>
                 <div className="modal-dialog">
                     <div className="modal-content p-4">
                         <div className="modal-header flex justify-content-between">
                             <h1 className="modal-title fs-5">{title}</h1>
-                            <button onClick={closeModal}>X</button>
+                            <button onClick={closeModal} className='bg-white p-2'>X</button>
                         </div>
                         <div className="p-2">
                             {children}

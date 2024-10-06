@@ -9,10 +9,23 @@ const App = () => {
     setShowModal(false);
   };
 
+    const modalButtons = [
+        { type: 'primary', label: 'Continue', onClick: () => alert('Continue clicked') },
+        { type: 'danger', label: 'Close', onClick: closeModalWindow },
+    ];
+
   return (
     <>
-      <Modal show={showModal} title='New title' closeModal={closeModalWindow}/>
-      <button className='btn btn-primary' onClick={() => setShowModal(!showModal)}>Modal</button>
+      <Modal
+          show={showModal}
+          title='Some kinda modal title'
+          closeModal={closeModalWindow}
+          buttons={modalButtons}
+          children='This is modal content'
+      />
+      <button className='btn btn-primary' onClick={() => setShowModal(!showModal)}>
+          Modal
+      </button>
       </>
       )
 };
